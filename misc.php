@@ -7,7 +7,11 @@
                 break;
             case "ps":
                 $output = shell_exec("ps");
-                echo "<pre>$output</pre>";
+                if (strpos($output,'perl') !== false) {
+                    echo 'true';
+                } else {
+                    echo 'false';
+                }
                 break;
         }
     }
